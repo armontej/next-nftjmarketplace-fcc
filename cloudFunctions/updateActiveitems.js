@@ -54,7 +54,7 @@ Moralis.Cloud.afterSave("ItemCanceled", async (request) => {
         query.equalTo("tokenId", request.object.get("tokenId"))
         logger.info(`Marketplace | Query: ${query}`)
         const canceledItem = await query.first()
-        logger.info(`Marketplace|CanceledItem:${canceledItem}`)
+        logger.info(`Marketplace | CanceledItem: ${JSON.stringify(canceledItem)}`)
         if (canceledItem) {
             logger.info(
                 `Deleting ${request.object.get("tokenId")} at address ${request.object.get(
