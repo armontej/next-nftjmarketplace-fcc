@@ -99,9 +99,10 @@ async function main() {
 
     let itemCanceledOptions = {
         chainId: moralisChainId,
-        sync_historical: true,
-        topic: "ItemCanceled(address, address,uint256)",
         address: contractAddress,
+        topic: "ItemCanceled(address,address,uint256)",
+        sync_historical: true,
+        
         abi: {
             anonymous: false,
             inputs: [
